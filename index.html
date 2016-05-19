@@ -22,4 +22,35 @@
 </body>
 <script src="http://wellcaffeinated.net/PhysicsJS/assets/scripts/vendor/physicsjs-0.6.0/physicsjs-full-0.6.0.min.js"></script>
 
+<script>
+
+    Physics(function(world){
+
+      var renderer = Physics.renderer('canvas', {
+        el: 'viewport',
+        width: 500,
+        height: 500
+      });
+
+      world.add( renderer );
+
+		//creates a rectangle named square
+      var square = Physics.body('rectangle', {
+        x: 250,
+        y: 250,
+		//horizontal velocity of 0.1
+		vx: 0.1,
+        width: 50,
+        height: 50
+      });
+
+
+	//creates and renders a square
+      world.add( square );
+      world.render();
+	  
+	
+    });
+
+</script>
 </html>
