@@ -59,7 +59,21 @@ Physics.util.ticker.start();
 world.on('step', function(){
     world.render();
 });
+//objects within the document will constantly accelerate down
+world.add( Physics.behavior('constant-acceleration') );
+var bounds = Physics.aabb(0, 0, 500, 500);
+world.add( Physics.behavior('edge-collision-detection', {
+    aabb: bounds
+}) );
+//the objects within the document will form fully elastic collisions with the borders of the canvas
+world.add( Physics.behavior('body-impulse-response') );
 
+
+
+world.add( Physics.behavior('edge-collision-detection', {
+    aabb: bounds,
+    restitution: 0.2
+}) );
     });
 
 </script>
