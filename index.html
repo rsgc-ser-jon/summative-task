@@ -35,13 +35,12 @@
       world.add( renderer );
 
 		//creates a rectangle named square
-      var square = Physics.body('rectangle', {
+      var square = Physics.body('circle', {
         x: 250,
         y: 250,
 		//horizontal velocity of 0.1
 		vx: 0.1,
-        width: 50,
-        height: 50
+  		radius: 50,
       });
 
 
@@ -63,17 +62,14 @@ world.on('step', function(){
 world.add( Physics.behavior('constant-acceleration') );
 var bounds = Physics.aabb(0, 0, 500, 500);
 world.add( Physics.behavior('edge-collision-detection', {
-    aabb: bounds
+    aabb: bounds,
+    restitution: 0.3
 }) );
 //the objects within the document will form fully elastic collisions with the borders of the canvas
 world.add( Physics.behavior('body-impulse-response') );
 
 
 
-world.add( Physics.behavior('edge-collision-detection', {
-    aabb: bounds,
-    restitution: 0.2
-}) );
     });
 
 </script>
