@@ -29,21 +29,32 @@
       var renderer = Physics.renderer('canvas', {
         el: 'viewport',
         width: 500,
-        height: 500
-      });
+        height: 500,
+		
+	    styles: {
+        // set colors for the circle bodies
+        'circle' : {
+            strokeStyle: '#0C0D4A',
+            lineWidth: 5,
+            fillStyle: '#086990',
+            angleIndicator: '#0C0D4A'
+        }
+    }
+  });
 
       world.add( renderer );
 
+
 		//creates a rectangle named square
-      var square = Physics.body('circle', {
+      var circle1 = Physics.body('circle', {
         x: 250,
         y: 250,
 		//horizontal velocity of 0.1
 		vx: 0.1,
-  		radius: 50,
+  		radius: 25,
       });
 
-
+		
 	//creates and renders a square
       world.add( square );
       world.render();
