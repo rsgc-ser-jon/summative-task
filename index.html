@@ -49,7 +49,17 @@
       world.add( square );
       world.render();
 	  
-	
+	  Physics.util.ticker.on(function( time, dt ){
+    world.step( time );
+});
+
+//creates a timer that constantly updates what is being rendered
+Physics.util.ticker.start();
+
+world.on('step', function(){
+    world.render();
+});
+
     });
 
 </script>
