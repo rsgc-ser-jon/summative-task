@@ -37,8 +37,8 @@
             strokeStyle: '#0C0D4A',
             lineWidth: 5,
             fillStyle: '#086990',
-            angleIndicator: '#0C0D4A'
-        }
+            angleIndicator: '#0C0D4A',
+		}
     }
   });
 
@@ -53,13 +53,28 @@
 		vx: 0.1,
   		radius: 25,
       });
-
+		
 		
 	//creates and renders a square
-      world.add( square );
+      world.add(circle1);
       world.render();
 	  
-	  Physics.util.ticker.on(function( time, dt ){
+	  
+	  var triangle = Physics.body('convex-polygon', {
+    // place the centroid of the polygon at (300, 200)
+    x: 300,
+    y: 200,
+    // the centroid is automatically calculated and used to position the shape
+    vertices: [
+        { x: 0, y: 30 },
+        { x: 0, y: -30 },
+        { x: 100, y: 30 },
+    ]
+});
+	  world.add(triangle);
+      world.render();
+	  
+	Physics.util.ticker.on(function( time, dt ){
     world.step( time );
 });
 
@@ -79,7 +94,8 @@ world.add( Physics.behavior('edge-collision-detection', {
 //the objects within the document will form fully elastic collisions with the borders of the canvas
 world.add( Physics.behavior('body-impulse-response') );
 
-
+world.add( Physics.behavior('body-collision-detection') );
+world.add( Physics.behavior('sweep-prune') );
 
     });
 
