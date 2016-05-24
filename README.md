@@ -2,20 +2,12 @@
 
 ## Overall goal
 
-My summative task will be a combination software and hardware product.
-
-I will program a sensor attached to an Arduino board. The sensor will be able to detect how hard a person is blowing air toward it (perhaps a pressure sensor? a mic?).
-
-When a person blows on the sensor, this information is transmitted to a Processing sketch.
-
-In the sketch, a visual representation of a "ripe" dandelion will be shown.  The dandelion seeds will disperse on screen in the sketch, simulating the physics of the motion of real dandelion seeds, when someone blows them off the stem in real life.
+My summative task will be in the P5 HTML Library and simulate the movement of a ball over several planes with varying amounts of friction. Ideally, the project will contain three slanted planes with sliders below, allowing the user to ajust their friction. More friction will obviously result in less velocity with each passing and a final velocity will be recorded as the ball hits the bottom of the screen.
 
 ## Sub-goals
 
-* extend Motion class (that we developed earlier together) to allow for force accumulation (wind, gravity, other forces)
-* make the mouse movement translate to a wind force
-* make it so that moving the mouse causes the "seeds" of the dandelion to disperse
-* modify the visual representation of the Motion class to more closely resembly dandelion seeds
-* identify an Arduino sensor that might work to detect air pressure / volume
-* program sensor to send values to Processing sketch
-* translate sensor output to wind force in sketch
+* extend Motion class to implement gravity
+* allow the ball to recognize and collide with the planes
+* implement friction into the planes
+* implement a slider that modifies friction
+* allow the program to detect the velocity of the ball and display it once the ball reaches the bottom
