@@ -11,11 +11,18 @@
 var i = 0;
 var locationX = 50;
 var locationY = 0;
-var velocityX = 3;
-var velocityY = 0;
+var velocityX = 0;
+var velocityY = 1;
 
   function setup() {
 	createCanvas(600, 400);
+}
+
+function mover(){
+	//moves the ball's location in y increase based on it's y-velocity
+	locationY += velocityY;
+	//increases velocity periodically by 0.2 (acceleration) 
+	velocityY += 0.2;
 }
 
 function drawBall(){
@@ -25,9 +32,7 @@ noStroke();
 ellipse(locationX, locationY, 80, 80);
 }
 
-function mover(){
-	
-}
+
 
 function drawTriangle(){
 var c = color(0, 150, 200);  
@@ -40,6 +45,7 @@ function draw() {
 background(255);
 drawBall();
 drawTriangle();
+mover();
 }
 
 
