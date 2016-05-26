@@ -9,6 +9,10 @@
 <script>
 
 var i = 0;
+var locationX = 50;
+var locationY = 0;
+var velocityX = 3;
+var velocityY = 0;
 
   function setup() {
 	createCanvas(600, 400);
@@ -18,7 +22,11 @@ function drawBall(){
 var c = color(50, 100, 175);  
 fill(c);  
 noStroke();
-ellipse(50, i, 80, 80);
+ellipse(locationX, locationY, 80, 80);
+}
+
+function mover(){
+	
 }
 
 function drawTriangle(){
@@ -30,14 +38,8 @@ triangle(0, 75, 0, 20, 100, 75);
 
 function draw() {
 background(255);
-var velocity = 3;
 drawBall();
 drawTriangle();
-var acceleration = 1.5;
-
-velocity += acceleration;
-i += velocity;
-
 }
 
 
