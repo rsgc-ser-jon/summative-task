@@ -9,27 +9,69 @@
 <script>
 
 var i = 0;
+
+//canvas
+var cHeight = 400;
+var cWidth = 600;
+
+//ball
 var locationX = 50;
-var locationY = 0;
+var locationY = 50;
 var velocityX = 0;
 var velocityY = 1;
 
   function setup() {
-	createCanvas(600, 400);
+	createCanvas(cWidth, cHeight);
 }
 
-function mover(){
+//unfortunately the "or" symbol does not work (||) resulting in 4 if statements instead of 2
+//it also seems that "=" does not work, and writing "<=" and ">=" solves the problem
+
+function checkEdge(){
+//if the ball's location is equal to the left/right edge, reverse its horizontal velocity
+
+if (locationX >= cWidth){
+	 velocityX *= -1;
+}
+
+if (locationX <= 0){
+	 velocityX *= -1;
+}
+/*
+if (locationX = cWidth || locationX = 0){
+	velocityX *= -1;
+	}
+*/
+//if the ball's location is equal to the top/bottom edge, make its vertical velocity 0
+if (locationY >= cHeight){
+	 velocityY *= 0;
+}
+
+if (locationY <= 0){
+	 velocityY *= 0;
+}
+
+/*
+if (locationY = cHeight locationY = 0){
+	velocityX *= 0;
+	}
+*/
+}
+
+function move(){
 	//moves the ball's location in y increase based on it's y-velocity
 	locationY += velocityY;
 	//increases velocity periodically by 0.2 (acceleration) 
 	velocityY += 0.2;
 }
 
+
+
 function drawBall(){
 var c = color(50, 100, 175);  
 fill(c);  
 noStroke();
-ellipse(locationX, locationY, 80, 80);
+ellipse(locationX, locationY, 50, 50);
 }
 
 
@@ -45,7 +87,8 @@ function draw() {
 background(255);
 drawBall();
 drawTriangle();
-mover();
+move();
+checkEdge();
 }
 
 
