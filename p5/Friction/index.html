@@ -19,6 +19,7 @@ var locationX = 50;
 var locationY = 50;
 var velocityX = 0;
 var velocityY = 1;
+var radius = 25;
 
   function setup() {
 	createCanvas(cWidth, cHeight);
@@ -30,11 +31,11 @@ var velocityY = 1;
 function checkEdge(){
 //if the ball's location is equal to the left/right edge, reverse its horizontal velocity
 
-if (locationX >= cWidth){
+if (locationX >= cWidth-radius){
 	 velocityX *= -1;
 }
 
-if (locationX <= 0){
+if (locationX <= 0+radius){
 	 velocityX *= -1;
 }
 /*
@@ -43,11 +44,11 @@ if (locationX = cWidth || locationX = 0){
 	}
 */
 //if the ball's location is equal to the top/bottom edge, make its vertical velocity 0
-if (locationY >= cHeight){
+if (locationY >= cHeight-radius){
 	 velocityY *= 0;
 }
 
-if (locationY <= 0){
+if (locationY <= 0+radius){
 	 velocityY *= 0;
 }
 
@@ -71,7 +72,7 @@ function drawBall(){
 var c = color(50, 100, 175);  
 fill(c);  
 noStroke();
-ellipse(locationX, locationY, 50, 50);
+ellipse(locationX, locationY, radius*2, radius*2);
 }
 
 
