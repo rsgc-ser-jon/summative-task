@@ -14,33 +14,36 @@ My summative task will be in the P5 HTML Library and simulate the movement of a 
 
 ## Final Questions
  
-What (if anything – although there is probably at least something) does the user need to know about what your program does?
+1. What (if anything – although there is probably at least something) does the user need to know about what your program does?
 
 My program simulates the act of friction on a rolling ball.
 
 
-What (if anything) does the user need to know to operate your program (keystrokes, et cetera)?
+2. What (if anything) does the user need to know to operate your program (keystrokes, et cetera)?
 
 The slider at the bottom is used to modify the percentage of the ball's velocity
 
+3. How does your program show evidence of your understanding of object-oriented programming concepts like encapsulation and inheritance?
 
-How does your program show evidence of your understanding of object-oriented programming concepts like encapsulation and inheritance?
+Each sperate action has its own function with a descriptive name.
 
+4. What evidence can you provide that your program is human-readable?
 
+- Each line of code that could be considered somewhat complex is commented and explained
+- Function names are descriptive
+- code is clean and readable
 
-What evidence can you provide that your program is human-readable?
-For example, where have you used:
-descriptive function names
-meaningful variable names
-comments that describe the intention of a block of code
-What is the most important algorithm, or algorithm(s), in your program?
+5. What is the most important algorithm, or algorithm(s), in your program?
 That is, where is the "core idea" of your program?
-Explain how this works.
-How have you made your program easy to use?
-How have you made correct use of source control?
-For example, show that you have:
-made frequent commits
-kept commits "atomic" (i.e.: one accomplishment per commit, rather than a batch of things all committed at once)
-descriptive commit messages
-You may begin working on responses to these questions prior to Monday's class, but must have your responses to these questions completed by the end of Monday's class.
+
+The use of friction was integral to the creation of this project. This was acheived by creating a slider and altering the ball's horizontal velocity based on its value.
+
+6. How have you made your program easy to use?
+
+The program only has 2 inputs that are clearly visible on screen and very straightforward (slider and button). The dynamic numbers above the slider allow the user to tell exactly what changes they are making which is enforced by the red colour as the slider is increased.
+
+7. How have you made correct use of source control?
+
+All of the small changes are included in small/seperate commits. though there as instances of large commits, most if not all of them atleast have a theme (tweaking values, collisions, etc...).
+
  
