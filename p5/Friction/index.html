@@ -33,23 +33,21 @@ var friction
 var play
 
   function setup() {
-	  //create the cavanse with dimensions of cWidth, cHeight
+	 //creates the cavanse with dimensions of cWidth, cHeight
 	createCanvas(cWidth, cHeight);
-	
+	//creates a slider whose value determines the amount of friction
 	friction = createSlider(0,100,98).position(75,360);
-	
+	//creates text above the slider
 	createP("Friction").position(75,320);
-	
-	velocityX = friction.value()*0.01;
-	
-
+	//creates a button named play
 	play = createButton("play").position(75,380);
+	//calls the start function once the play button is pressed
 	play.mousePressed(start);
   }
   
+
+
 //unfortunately the "or" symbol does not work (||) resulting in 4 if statements instead of 2
-
-
 function checkEdge(){
 //if the ball's location is equal to the left/right edge, reverse its horizontal velocity
 if (locationX >= cWidth-radius){
@@ -66,6 +64,7 @@ if (locationX = cWidth || locationX = 0){
 //if the ball's location is equal to the top/bottom edge, make its vertical velocity 0
 if (locationY >= cHeight-radius){
 	 velocityY *= 0;
+	 //the effect of friction will take place once the ball reaches the bottom
 		velocityX *= friction.value()*0.01;
 
 }
@@ -80,7 +79,7 @@ if (locationY = cHeight locationY = 0){
 */
 }
 function move(){
-	//moves the ball's location in y increase based on it's y-velocity
+	//moves the ball's location in y based on it's y-velocity
 	locationY += velocityY;
 	locationX += velocityX;
 	//increases velocity periodically by 0.2 (acceleration) 
@@ -110,7 +109,7 @@ fill(c);
 noStroke();
 triangle(x1, y1+50, x2, y2+50, x3+200, y3+50);
 }
-
+//resets the ball's values
 function start(){
 locationX = 20;
 locationY = 50;
@@ -126,13 +125,10 @@ velocityX *= 4;
 }
 
 function draw() {
-	background(255);
+background(255);
 drawBall();
-
 drawTriangle();
-
 drawRect();
-
 move();
 checkEdge();
 slide();
