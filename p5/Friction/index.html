@@ -36,7 +36,7 @@ var play
 	  //create the cavanse with dimensions of cWidth, cHeight
 	createCanvas(cWidth, cHeight);
 	
-	friction = createSlider(0,150,100).position(75,360);
+	friction = createSlider(0,100,100).position(75,360);
 	
 	createP("Friction").position(75,320);
 	
@@ -65,7 +65,7 @@ if (locationX = cWidth || locationX = 0){
 //if the ball's location is equal to the top/bottom edge, make its vertical velocity 0
 if (locationY >= cHeight-radius){
 	 velocityY *= 0;
-		velocityX *= 0.9;
+		velocityX *= friction.value()*0.01;
 
 }
 if (locationY <= 0+radius){
