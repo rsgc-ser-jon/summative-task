@@ -42,8 +42,9 @@ var play
 	
 	velocityX = friction.value()*0.01;
 	
+
 	play = createButton("play").position(75,380);
-	play.mousePressed(draw);
+	play.mousePressed(start);
   }
   
 //unfortunately the "or" symbol does not work (||) resulting in 4 if statements instead of 2
@@ -105,10 +106,17 @@ rect(0,397,600,10);
 
 
 function drawTriangle(){
-var c = color(0, 150, 200); 
+var c = color(125, 0, 0); 
 fill(c);  
 noStroke();
 triangle(x1, y1+50, x2, y2+50, x3+200, y3+50);
+}
+
+function start(){
+locationX = 20;
+locationY = 50;
+velocityX = 1;
+velocityY = 1;
 }
 
 function slide(){
